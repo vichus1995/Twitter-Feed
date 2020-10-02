@@ -13,6 +13,7 @@ server = config('server')
 db_name = config('db_name')
 user = config('user')
 password =config('password')
+
 sql = '''EXEC dbo.Insert_Twitter_Data @tweetinfo =?'''
 
 def insert_data(tweet_json):
