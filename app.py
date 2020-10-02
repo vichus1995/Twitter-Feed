@@ -1,8 +1,6 @@
-import os
 import tweepy
 import json
 import pyodbc
-import pdb
 from decouple import config
 
 api_key = config('api_key')
@@ -63,7 +61,6 @@ if __name__ =='__main__':
 
 
     api = tweepy.API(auth,wait_on_rate_limit=True)
-
     listener = myStreamListener(api)
     stream = tweepy.Stream(auth,listener =listener)
     stream.filter(track = ['Football'], languages = ['en'])
